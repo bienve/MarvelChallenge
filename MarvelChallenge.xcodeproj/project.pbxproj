@@ -76,10 +76,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30BDD1B92919A965005F067C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				30F47C862919A38C00ADD0EA /* AppDelegate.swift */,
+				30F47C882919A38C00ADD0EA /* SceneDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		30BDD1BA2919A971005F067C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30BDD1BB2919A97E005F067C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				30F47C8A2919A38C00ADD0EA /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		30BDD1BC2919A9A3005F067C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				30F47C8F2919A38E00ADD0EA /* Assets.xcassets */,
+				30F47C942919A38E00ADD0EA /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		30F47C7A2919A38C00ADD0EA = {
 			isa = PBXGroup;
 			children = (
 				30F47C852919A38C00ADD0EA /* MarvelChallenge */,
+				30F47CB62919A6B100ADD0EA /* Storyboards */,
 				30F47C9C2919A38E00ADD0EA /* MarvelChallengeTests */,
 				30F47CA62919A38E00ADD0EA /* MarvelChallengeUITests */,
 				30F47C842919A38C00ADD0EA /* Products */,
@@ -99,13 +133,11 @@
 		30F47C852919A38C00ADD0EA /* MarvelChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				30F47C862919A38C00ADD0EA /* AppDelegate.swift */,
-				30F47C882919A38C00ADD0EA /* SceneDelegate.swift */,
-				30F47C8A2919A38C00ADD0EA /* ViewController.swift */,
-				30F47C8C2919A38C00ADD0EA /* Main.storyboard */,
-				30F47C8F2919A38E00ADD0EA /* Assets.xcassets */,
-				30F47C912919A38E00ADD0EA /* LaunchScreen.storyboard */,
-				30F47C942919A38E00ADD0EA /* Info.plist */,
+				30F47CB72919A89700ADD0EA /* Network Layer */,
+				30BDD1BB2919A97E005F067C /* Scenes */,
+				30BDD1BA2919A971005F067C /* Model */,
+				30BDD1B92919A965005F067C /* Common */,
+				30BDD1BC2919A9A3005F067C /* Resources */,
 			);
 			path = MarvelChallenge;
 			sourceTree = "<group>";
@@ -125,6 +157,22 @@
 				30F47CA92919A38E00ADD0EA /* MarvelChallengeUITestsLaunchTests.swift */,
 			);
 			path = MarvelChallengeUITests;
+			sourceTree = "<group>";
+		};
+		30F47CB62919A6B100ADD0EA /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				30F47C8C2919A38C00ADD0EA /* Main.storyboard */,
+				30F47C912919A38E00ADD0EA /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		30F47CB72919A89700ADD0EA /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Network Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -439,7 +487,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X26ZL9PT5Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarvelChallenge/Info.plist;
+				INFOPLIST_FILE = MarvelChallenge/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -467,7 +515,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X26ZL9PT5Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarvelChallenge/Info.plist;
+				INFOPLIST_FILE = "MarvelChallenge/Resources//Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
