@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CharacterRequest: RequestRouter {
+enum CharactersRequest: RequestRouter {
     
     case fetchCharacterList
     case fetchCharacterDetail(characterId: Int)
