@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		300C3C72291D8DAC001EE658 /* CharactersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300C3C71291D8DAC001EE658 /* CharactersRequest.swift */; };
+		300C3C74291D8FD8001EE658 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300C3C73291D8FD8001EE658 /* Endpoints.swift */; };
+		300C3C76291D9395001EE658 /* CharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300C3C75291D9395001EE658 /* CharactersTableViewController.swift */; };
+		300C3C78291D93AC001EE658 /* CharactersTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300C3C77291D93AC001EE658 /* CharactersTableViewModel.swift */; };
+		300C3C7B291D960A001EE658 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300C3C7A291D960A001EE658 /* Main.storyboard */; };
+		3014D027291C6BD4002E322C /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014D026291C6BD4002E322C /* ApiError.swift */; };
+		3014D029291CE1FA002E322C /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3014D028291CE1FA002E322C /* ServiceManager.swift */; };
+		30157990291BFE2500F8238E /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3015798F291BFE2500F8238E /* RequestRouter.swift */; };
+		30375E9A291C05C300C53B82 /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = 30375E99291C05C300C53B82 /* Readme.md */; };
+		30562A3E291C0C8900B15949 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30562A3D291C0C8900B15949 /* Environment.swift */; };
 		30F47C872919A38C00ADD0EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F47C862919A38C00ADD0EA /* AppDelegate.swift */; };
 		30F47C892919A38C00ADD0EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F47C882919A38C00ADD0EA /* SceneDelegate.swift */; };
-		30F47C8B2919A38C00ADD0EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F47C8A2919A38C00ADD0EA /* ViewController.swift */; };
-		30F47C8E2919A38C00ADD0EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F47C8C2919A38C00ADD0EA /* Main.storyboard */; };
 		30F47C902919A38E00ADD0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30F47C8F2919A38E00ADD0EA /* Assets.xcassets */; };
 		30F47C932919A38E00ADD0EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30F47C912919A38E00ADD0EA /* LaunchScreen.storyboard */; };
 		30F47C9E2919A38E00ADD0EA /* MarvelChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F47C9D2919A38E00ADD0EA /* MarvelChallengeTests.swift */; };
@@ -36,11 +44,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		300C3C71291D8DAC001EE658 /* CharactersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersRequest.swift; sourceTree = "<group>"; };
+		300C3C73291D8FD8001EE658 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		300C3C75291D9395001EE658 /* CharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewController.swift; sourceTree = "<group>"; };
+		300C3C77291D93AC001EE658 /* CharactersTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewModel.swift; sourceTree = "<group>"; };
+		300C3C7A291D960A001EE658 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		3014D026291C6BD4002E322C /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		3014D028291CE1FA002E322C /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
+		3015798F291BFE2500F8238E /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
+		30157991291BFFF100F8238E /* ProConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ProConfig.xcconfig; sourceTree = "<group>"; };
+		30375E99291C05C300C53B82 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		30562A3D291C0C8900B15949 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		30F47C832919A38C00ADD0EA /* MarvelChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MarvelChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30F47C862919A38C00ADD0EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30F47C882919A38C00ADD0EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		30F47C8A2919A38C00ADD0EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		30F47C8D2919A38C00ADD0EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		30F47C8F2919A38E00ADD0EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30F47C922919A38E00ADD0EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		30F47C942919A38E00ADD0EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -76,6 +93,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		300C3C79291D93D6001EE658 /* Characters List */ = {
+			isa = PBXGroup;
+			children = (
+				300C3C75291D9395001EE658 /* CharactersTableViewController.swift */,
+				300C3C77291D93AC001EE658 /* CharactersTableViewModel.swift */,
+			);
+			path = "Characters List";
+			sourceTree = "<group>";
+		};
+		3014D024291C6B63002E322C /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				3014D026291C6BD4002E322C /* ApiError.swift */,
+				3015798F291BFE2500F8238E /* RequestRouter.swift */,
+				3014D028291CE1FA002E322C /* ServiceManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		3014D025291C6B89002E322C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				300C3C71291D8DAC001EE658 /* CharactersRequest.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		30157992291BFFF800F8238E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				30F47C942919A38E00ADD0EA /* Info.plist */,
+				30157991291BFFF100F8238E /* ProConfig.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		30BDD1B92919A965005F067C /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,7 +148,7 @@
 		30BDD1BB2919A97E005F067C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				30F47C8A2919A38C00ADD0EA /* ViewController.swift */,
+				300C3C79291D93D6001EE658 /* Characters List */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -104,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				30F47C8F2919A38E00ADD0EA /* Assets.xcassets */,
-				30F47C942919A38E00ADD0EA /* Info.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -113,7 +165,6 @@
 			isa = PBXGroup;
 			children = (
 				30F47C852919A38C00ADD0EA /* MarvelChallenge */,
-				30F47CB62919A6B100ADD0EA /* Storyboards */,
 				30F47C9C2919A38E00ADD0EA /* MarvelChallengeTests */,
 				30F47CA62919A38E00ADD0EA /* MarvelChallengeUITests */,
 				30F47C842919A38C00ADD0EA /* Products */,
@@ -134,10 +185,13 @@
 			isa = PBXGroup;
 			children = (
 				30F47CB72919A89700ADD0EA /* Network Layer */,
-				30BDD1BB2919A97E005F067C /* Scenes */,
 				30BDD1BA2919A971005F067C /* Model */,
+				30BDD1BB2919A97E005F067C /* Scenes */,
 				30BDD1B92919A965005F067C /* Common */,
+				30F47CB62919A6B100ADD0EA /* Storyboards */,
 				30BDD1BC2919A9A3005F067C /* Resources */,
+				30157992291BFFF800F8238E /* Config */,
+				30375E99291C05C300C53B82 /* Readme.md */,
 			);
 			path = MarvelChallenge;
 			sourceTree = "<group>";
@@ -162,8 +216,8 @@
 		30F47CB62919A6B100ADD0EA /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				30F47C8C2919A38C00ADD0EA /* Main.storyboard */,
 				30F47C912919A38E00ADD0EA /* LaunchScreen.storyboard */,
+				300C3C7A291D960A001EE658 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -171,6 +225,10 @@
 		30F47CB72919A89700ADD0EA /* Network Layer */ = {
 			isa = PBXGroup;
 			children = (
+				30562A3D291C0C8900B15949 /* Environment.swift */,
+				300C3C73291D8FD8001EE658 /* Endpoints.swift */,
+				3014D025291C6B89002E322C /* Services */,
+				3014D024291C6B63002E322C /* Core */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -281,7 +339,8 @@
 			files = (
 				30F47C932919A38E00ADD0EA /* LaunchScreen.storyboard in Resources */,
 				30F47C902919A38E00ADD0EA /* Assets.xcassets in Resources */,
-				30F47C8E2919A38C00ADD0EA /* Main.storyboard in Resources */,
+				30375E9A291C05C300C53B82 /* Readme.md in Resources */,
+				300C3C7B291D960A001EE658 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,9 +365,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30F47C8B2919A38C00ADD0EA /* ViewController.swift in Sources */,
 				30F47C872919A38C00ADD0EA /* AppDelegate.swift in Sources */,
+				300C3C78291D93AC001EE658 /* CharactersTableViewModel.swift in Sources */,
 				30F47C892919A38C00ADD0EA /* SceneDelegate.swift in Sources */,
+				300C3C72291D8DAC001EE658 /* CharactersRequest.swift in Sources */,
+				30157990291BFE2500F8238E /* RequestRouter.swift in Sources */,
+				30562A3E291C0C8900B15949 /* Environment.swift in Sources */,
+				3014D029291CE1FA002E322C /* ServiceManager.swift in Sources */,
+				300C3C74291D8FD8001EE658 /* Endpoints.swift in Sources */,
+				300C3C76291D9395001EE658 /* CharactersTableViewController.swift in Sources */,
+				3014D027291C6BD4002E322C /* ApiError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,14 +411,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		30F47C8C2919A38C00ADD0EA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				30F47C8D2919A38C00ADD0EA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		30F47C912919A38E00ADD0EA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -366,6 +424,7 @@
 /* Begin XCBuildConfiguration section */
 		30F47CAB2919A38E00ADD0EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30157991291BFFF100F8238E /* ProConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -426,6 +485,7 @@
 		};
 		30F47CAC2919A38E00ADD0EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30157991291BFFF100F8238E /* ProConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -480,6 +540,7 @@
 		};
 		30F47CAE2919A38E00ADD0EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30157991291BFFF100F8238E /* ProConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -487,7 +548,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X26ZL9PT5Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MarvelChallenge/Resources/Info.plist;
+				INFOPLIST_FILE = MarvelChallenge/Config/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -508,6 +569,7 @@
 		};
 		30F47CAF2919A38E00ADD0EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30157991291BFFF100F8238E /* ProConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -515,7 +577,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X26ZL9PT5Q;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "MarvelChallenge/Resources//Info.plist";
+				INFOPLIST_FILE = "MarvelChallenge/Config//Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -536,6 +598,7 @@
 		};
 		30F47CB12919A38E00ADD0EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30157991291BFFF100F8238E /* ProConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -556,6 +619,7 @@
 		};
 		30F47CB22919A38E00ADD0EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30157991291BFFF100F8238E /* ProConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -576,6 +640,7 @@
 		};
 		30F47CB42919A38E00ADD0EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30157991291BFFF100F8238E /* ProConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -594,6 +659,7 @@
 		};
 		30F47CB52919A38E00ADD0EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30157991291BFFF100F8238E /* ProConfig.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

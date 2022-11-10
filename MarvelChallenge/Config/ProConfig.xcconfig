@@ -1,0 +1,13 @@
+//
+//  ProConfig.xcconfig
+//  MarvelChallenge
+//
+//  Created by 67881458 on 9/11/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+BASE_URL = https:/$()/gateway.marvel.com
+MARVEL_PUBLIC_KEY = ef46769d96f38391c80b2ec5493398db
+MARVEL_PRIVATE_KEY = 806cc8e0373ab5fb1bfac88fc1f3e6595f253f30
