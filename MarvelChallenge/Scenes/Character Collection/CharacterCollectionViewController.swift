@@ -41,10 +41,28 @@ class CharacterCollectionViewController: UICollectionViewController {
                 self.collectionView.reloadData()
                 
         }.store(in: &cancellables)
+        
+        self.viewModel.errorSubject
+            .receive(on: RunLoop.main)
+            .sink {[weak self] errorMessage in
+                self?.showErrorDialog(message: errorMessage)
+            }.store(in: &cancellables)
+        
     }
     
+    
+    //MARK: -
+    
+    func showErrorDialog(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .cancel)
+        
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: true)
+    }
 
-    // MARK: COMPASABLE COLLECTION VIEW LAYOUT
+    // MARK: - COMPASABLE COLLECTION VIEW LAYOUT
     
     func setupComicCollectionViewLayout() -> UICollectionViewLayout {
         

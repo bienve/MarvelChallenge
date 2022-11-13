@@ -6,21 +6,24 @@
 //
 
 import Foundation
+import Combine
 
 class CharacterCollectionViewModel {
     
-    private let charactersService: CharactersService
+    private let charactersService: CharacterServiceProtocol
     
     @Published var isLoading: Bool = false
     @Published var characterCount: Int = 0
     var copyrigyt: String?
+    
+    var errorSubject = PassthroughSubject<String, Never>()
     
     private let pageSize = 30
     private var currentPage: Int = 0
     private var pagingReachedEnd: Bool = false
     private var characterList: [Character] = []
     
-    init(charactersService: CharactersService) {
+    init(charactersService: CharacterServiceProtocol) {
         self.charactersService = charactersService
         self.fetchCharacterList()
     }
@@ -48,7 +51,7 @@ class CharacterCollectionViewModel {
                 
             } catch {
                 print(error)
-                //TODO: ERROR HANDLE
+                errorSubject.send("Error fetching character list.")
             }
          
             isLoading = false
