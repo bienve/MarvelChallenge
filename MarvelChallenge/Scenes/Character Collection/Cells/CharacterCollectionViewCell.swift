@@ -21,6 +21,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         backgroundImageView.kf.cancelDownloadTask()
+        thumbImageView.kf.cancelDownloadTask()
         backgroundImageView.image = nil
         thumbImageView.image = nil
     }
@@ -36,29 +37,38 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         
         if let thumbUrl = character.getThumbnailUrl(preferredVariant: CharacterCollectionViewCell.preferredImageVariant) {
 
-            backgroundImageView.kf.setImage(
-                with: thumbUrl) {[weak self] result in
+            thumbImageView.kf.setImage(
+                with: thumbUrl,
+                options: [
+                    .transition(ImageTransition.fade(0.5))]) {[weak self] result in
                     
-                    switch result {
-                    case .success(let image):
-                        self?.thumbImageView.image = image.image
-                    case .failure(let error):
-                        self?.setupError()
-                        print(error)
-                    }
-                    
+                        if case .failure( _) = result {
+                            self?.setupError()
+                        }
+
                 }
             
-            updateCurrentScrollOffset(offset: offset)
+            backgroundImageView.kf.setImage(
+                with: thumbUrl,
+                options: [
+                    .transition(ImageTransition.fade(0.5))]) {[weak self] result in
+                    
+                        if case .failure( _) = result {
+                            self?.setupError()
+                        }
+
+                }
             
         } else {
             setupError()
         }
         
+        updateCurrentScrollOffset(offset: offset)
+        
     }
     
     func setupError() {
-        
+        self.thumbImageView.image = UIImage(named: "imageError")
     }
     
     public func updateCurrentScrollOffset(offset: CGFloat) {

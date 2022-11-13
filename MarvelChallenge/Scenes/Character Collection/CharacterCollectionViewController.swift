@@ -36,16 +36,18 @@ class CharacterCollectionViewController: UICollectionViewController {
     private func bindViewModel() {
         self.viewModel.$characterCount
             .receive(on: RunLoop.main)
-            .sink { _ in
+            .sink {[weak self] _ in
 
-                self.collectionView.reloadData()
+                self?.collectionView.reloadData()
                 
         }.store(in: &cancellables)
         
         self.viewModel.errorSubject
             .receive(on: RunLoop.main)
             .sink {[weak self] errorMessage in
+                
                 self?.showErrorDialog(message: errorMessage)
+                
             }.store(in: &cancellables)
         
     }
@@ -107,10 +109,8 @@ class CharacterCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.viewModel.characterCount
@@ -145,6 +145,7 @@ class CharacterCollectionViewController: UICollectionViewController {
         visibleCells.forEach { cell in
             cell.updateCurrentScrollOffset(offset: collectionView.contentOffset.y)
         }
+         
         
     }
     

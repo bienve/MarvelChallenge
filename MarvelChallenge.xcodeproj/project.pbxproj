@@ -243,12 +243,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		30F1C484291FAC14000F1F06 /* Extensions */ = {
+		30F1C484291FAC14000F1F06 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
 				30F1C485291FAC28000F1F06 /* StrokeTextLabel.swift */,
 			);
-			path = Extensions;
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		30F1C487291FAE1E000F1F06 /* Font */ = {
@@ -308,7 +308,7 @@
 				30F47CB72919A89700ADD0EA /* Network Layer */,
 				30BDD1BA2919A971005F067C /* Model */,
 				30BDD1BB2919A97E005F067C /* Scenes */,
-				30F1C484291FAC14000F1F06 /* Extensions */,
+				30F1C484291FAC14000F1F06 /* Custom Views */,
 				30BDD1B92919A965005F067C /* App delegate */,
 				30F47CB62919A6B100ADD0EA /* Storyboards */,
 				30BDD1BC2919A9A3005F067C /* Resources */,

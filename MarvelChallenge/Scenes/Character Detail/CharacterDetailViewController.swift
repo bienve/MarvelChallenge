@@ -50,9 +50,9 @@ class CharacterDetailViewController: UIViewController {
         
         self.viewModel.$imageURL
             .receive(on: RunLoop.main)
-            .sink { url in
+            .sink {[weak self] url in
                 
-                self.imageView.kf.setImage(with: url) {[weak self] result in
+                self?.imageView.kf.setImage(with: url) {[weak self] result in
                     
                     switch result {
                     case .success(let image):
