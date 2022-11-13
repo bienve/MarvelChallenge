@@ -52,16 +52,22 @@ class CharacterDetailViewController: UIViewController {
             .receive(on: RunLoop.main)
             .sink {[weak self] url in
                 
-                self?.imageView.kf.setImage(with: url) {[weak self] result in
+                self?.imageView.kf
+                    .setImage(
+                        with: url,
+                        placeholder: UIImage(named: "placeholder"),
+                        options: [.transition(ImageTransition.fade(0.5))]) {[weak self] result in
                     
-                    switch result {
-                    case .success(let image):
-                        self?.backgroundImage.image = image.image
-                    case .failure(let error):
-                        print(error)
-                    }
-
-                }
+                            if case .failure(_) = result {
+                                self?.imageView.image = UIImage(named: "imageError")
+                            }
+                            
+                        }
+                
+                self?.backgroundImage.kf
+                    .setImage(
+                        with: url,
+                        options: [.transition(ImageTransition.fade(0.5))])
                 
         }.store(in: &cancellables)
         

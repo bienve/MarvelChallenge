@@ -51,13 +51,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
             backgroundImageView.kf.setImage(
                 with: thumbUrl,
                 options: [
-                    .transition(ImageTransition.fade(0.5))]) {[weak self] result in
-                    
-                        if case .failure( _) = result {
-                            self?.setupError()
-                        }
-
-                }
+                    .transition(ImageTransition.fade(0.5))])
             
         } else {
             setupError()
