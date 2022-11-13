@@ -12,22 +12,47 @@ class CharacterCollectionViewModel {
     
     private let charactersService: CharacterServiceProtocol
     
-    @Published var isLoading: Bool = false
-    @Published var characterCount: Int = 0
-    var copyrigyt: String?
-    
-    var errorSubject = PassthroughSubject<String, Never>()
+    @Published private(set) var isLoading: Bool = false
+    @Published private(set) var characterCount: Int = 0
+    private(set) var copyrigyt: String?
     
     private let pageSize = 30
     private var currentPage: Int = 0
     private var pagingReachedEnd: Bool = false
     private var characterList: [Character] = []
     
+    //MARK: - ERROR HANDLE
+    private(set) var errorSubject = PassthroughSubject<String, Never>()
+    
+    private enum ViewModelError {
+        
+        case unexpected, badResponse, httpError(code: Int)
+        
+        func formatedErrorString() -> String {
+            let baseErrorMessage = "Error fetching character list: "
+            var reason: String
+            
+            switch self {
+            case .badResponse:
+                reason = "Bad response"
+            case .unexpected:
+                reason = "Unexpected error"
+            case .httpError(let code):
+                reason = "Http error \(code)"
+            }
+            
+            return baseErrorMessage + reason
+        }
+    }
+    
+    //MARK: - INITIALIZERS
+    
     init(charactersService: CharacterServiceProtocol) {
         self.charactersService = charactersService
         self.fetchCharacterList()
     }
     
+    //MARK: - FUNCTIONS
     private func fetchCharacterList() {
         
         isLoading = true
@@ -40,20 +65,25 @@ class CharacterCollectionViewModel {
                 
                 let characterRequestResult = try await charactersService.fetchCharactersList(offset: currentPage * pageSize, limit: pageSize)
                 
+                
                 guard let characters = characterRequestResult.data?.results else {
-                    //TODO: HANDLE ERROR
+                    errorSubject.send(ViewModelError.unexpected.formatedErrorString())
                     return
                 }
+                
                 
                 self.copyrigyt = characterRequestResult.attributionText
                 
                 addPage(characters)
                 
+            } catch ApiError.badResponse {
+                errorSubject.send(ViewModelError.badResponse.formatedErrorString())
+            } catch ApiError.serverError(let code) {
+                errorSubject.send(ViewModelError.httpError(code: code).formatedErrorString())
             } catch {
-                print(error)
-                errorSubject.send("Error fetching character list.")
+                errorSubject.send(ViewModelError.unexpected.formatedErrorString())
             }
-         
+                
             isLoading = false
         }
         
