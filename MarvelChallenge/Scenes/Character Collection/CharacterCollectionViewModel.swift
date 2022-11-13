@@ -22,9 +22,10 @@ class CharacterCollectionViewModel {
     
     init(charactersService: CharactersService) {
         self.charactersService = charactersService
+        self.fetchCharacterList()
     }
     
-    func fetchCharacterList() {
+    private func fetchCharacterList() {
         
         isLoading = true
         

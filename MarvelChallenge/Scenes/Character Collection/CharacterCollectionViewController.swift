@@ -31,8 +31,6 @@ class CharacterCollectionViewController: UICollectionViewController {
         self.collectionView.collectionViewLayout = setupComicCollectionViewLayout()
         
         self.bindViewModel()
-        
-        self.viewModel.fetchCharacterList()
     }
     
     private func bindViewModel() {
