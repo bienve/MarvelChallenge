@@ -9,17 +9,28 @@ import Foundation
 
 class ServiceManager {
     
-    private let maxRetries = 3
     private let decoder = JSONDecoder()
     private let urlSession: URLSession
+    private var authenticator: ServiceAuthenticator?
     
-    init(urlSession: URLSession = URLSession.shared) {
+    init(urlSession: URLSession = URLSession.shared, authenticator: ServiceAuthenticator? = nil) {
         self.urlSession = urlSession
+        self.authenticator = authenticator
     }
     
     public func sendRequest<T: Decodable>(urlRequest: URLRequest) async throws -> T {
         
-        let (data, response) = try await self.urlSession.data(for: urlRequest)
+        var request: URLRequest
+        
+        if let authenticator = self.authenticator {
+            request = authenticator.authenticateRequest(urlRequest: urlRequest)
+        } else {
+            request = urlRequest
+        }
+        
+        print("\(request.url?.description ?? "")")
+        
+        let (data, response) = try await self.urlSession.data(for: request)
         
         guard let response = response as? HTTPURLResponse else {
             throw ApiError.badResponse
@@ -33,6 +44,10 @@ class ServiceManager {
         
         return try decoder.decode(T.self, from: data)
         
+    }
+    
+    public func setAuthenticator(authenticator: ServiceAuthenticator) {
+        self.authenticator = authenticator
     }
     
 }

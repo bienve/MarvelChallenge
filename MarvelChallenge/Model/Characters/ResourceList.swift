@@ -6,7 +6,8 @@
 import Foundation
 
 // MARK: - Comics
-struct ComicList: Codable {
-    let available, returned, collectionURI: String?
-    let items: [ComicsItem]?
+struct ResourceList: Codable {
+    let available, returned: Int?
+    let collectionURI: String?
+    let items: [ResourceItem]?
 }

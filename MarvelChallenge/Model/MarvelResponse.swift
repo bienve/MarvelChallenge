@@ -10,8 +10,10 @@ import Foundation
 // MARK: - Welcome
 struct MarvelResponse<T: Codable> : Codable {
     
-    let code, status, copyright, attributionText: String?
+    let code: Int?
+    let status, copyright, attributionText: String?
     let attributionHTML: String?
     let etag: String?
     let data: T?
+    
 }

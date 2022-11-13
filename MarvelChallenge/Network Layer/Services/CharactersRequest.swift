@@ -9,15 +9,31 @@ import Foundation
 
 enum CharactersRequest: RequestRouter {
     
-    case fetchCharacterList
-    case fetchCharacterDetail(characterId: Int)
+    private enum ParamKey: String {
+        case offset, limit
+    }
+    
+    case fetchCharacterList(_ offset: Int, _ limit: Int)
+    //case fetchCharacterDetail(characterId: Int)
     
     var pathComponent: String {
         switch self {
         case .fetchCharacterList:
             return Endpoint.characterList
+        /*
         case .fetchCharacterDetail(let characterId):
             return String(format: Endpoint.characterDetail, characterId)
+         */
+        }
+         
+    }
+    
+    var urlParams: [String: String]? {
+        switch self {
+        case .fetchCharacterList(let offset, let limit):
+            return [ParamKey.offset.rawValue : "\(offset)",
+                    ParamKey.limit.rawValue : "\(limit)"
+            ]
         }
     }
     

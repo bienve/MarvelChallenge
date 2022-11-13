@@ -41,17 +41,14 @@ extension RequestRouter {
         
         urlRequest.httpMethod = self.httpMethod.rawValue
 
-        
         if let bodyParams = bodyParams {
             urlRequest.httpBody = try JSONSerialization.data(withJSONObject: bodyParams)
         }
         
         if let urlParams = urlParams {
-            
             urlRequest.url?.append(queryItems: urlParams.map{ (key, value) in
                 URLQueryItem(name: key, value: value)
             })
-            
         }
         
         return urlRequest

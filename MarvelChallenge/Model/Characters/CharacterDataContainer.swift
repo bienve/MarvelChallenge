@@ -7,6 +7,6 @@ import Foundation
 
 // MARK: - DataClass
 struct CharacterDataContainer: Codable {
-    let offset, limit, total, count: String?
+    let offset, limit, total, count: Int?
     let results: [Character]?
 }

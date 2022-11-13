@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PrintQueueService {
+struct CharactersService {
     
     var serviceManager: ServiceManager
     
@@ -15,9 +15,15 @@ struct PrintQueueService {
         self.serviceManager = serviceManager
     }
     
-    func fetchCharactersList(page: Int, pageSize: Int) async throws -> MarvelResponse<CharacterDataContainer> {
-        let request = try CharactersRequest.fetchCharacterList.asUrlRequest()
+    func fetchCharactersList(offset: Int, limit: Int) async throws -> MarvelResponse<CharacterDataContainer> {
+        let request = try CharactersRequest.fetchCharacterList(offset, limit).asUrlRequest()
         return try await serviceManager.sendRequest(urlRequest: request)
     }
     
+    /* 
+    func fetchCharacterDetail(id: Int) async throws -> MarvelResponse<CharacterDataContainer> {
+        let request = try CharactersRequest.fetchCharacterDetail(characterId: id).asUrlRequest()
+        return try await serviceManager.sendRequest(urlRequest: request)
+    }
+    */
 }

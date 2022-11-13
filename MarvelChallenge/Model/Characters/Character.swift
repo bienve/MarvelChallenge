@@ -7,10 +7,24 @@ import Foundation
 
 // MARK: - Result
 struct Character: Codable {
-    let id, name, description, modified, resourceURI: String?
+    let id: Int?
+    let name, description, modified, resourceURI: String?
     let urls: [URLElement]?
     let thumbnail: Thumbnail?
-    let comics: ComicList?
-    let stories: Stories?
-    let events, series: ComicList?
+    let comics, stories, events, series: ResourceList?
+    
+    func getThumbnailUrl(preferredVariant: String) -> URL? {
+        
+        guard let thumbnail = thumbnail,
+              let thumbPath = thumbnail.path,
+              let thumbExtension = thumbnail.thumbnailExtension else {
+            
+            return nil
+            
+        }
+        
+        return URL(string: thumbPath)?
+            .appendingPathComponent(preferredVariant)
+            .appendingPathExtension(thumbExtension)
+    }
 }
