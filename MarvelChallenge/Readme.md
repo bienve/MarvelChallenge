@@ -12,3 +12,5 @@ Puntualizaciones sobre el proyecto, organización y componentes elegidos:
         
     - Capa de acceso a red: 
         Al ser una entidad bancaria entiendo que se evitará en la media de lo posible usar librerías de terceros en partes críticas. En este caso no he usado librerías de terceros como Alamofire/Moya, optando por URLSession para la implementación de una pequeña capa con funciones básicas.
+        
+    - Tests: Se han implementado algunos test a modo de ejemplo, no se ha perseguido una covertura de código aceptable.
