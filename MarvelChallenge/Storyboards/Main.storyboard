@@ -32,6 +32,10 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="RR3-me-bOR">
+                            <rect key="frame" x="0.0" y="-103" width="393" height="852"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CharacterCollectionCell" id="4H3-fn-YrE" customClass="CharacterCollectionViewCell" customModule="MarvelChallenge" customModuleProvider="target">
                                 <rect key="frame" x="7" y="0.0" width="379" height="198"/>
@@ -115,6 +119,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Marvel Characters" id="NGz-Zi-K21"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="RR3-me-bOR" id="R9A-h1-Nh1"/>
                         <segue destination="II4-ob-d4G" kind="show" identifier="showCharacterDetail" destinationCreationSelector="makeCharacterDetailSegueAction:sender:" id="3BZ-ej-tHJ"/>
                     </connections>
                 </collectionViewController>
@@ -142,7 +147,7 @@
                                 <blurEffect style="regular"/>
                             </visualEffectView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x5d-HU-pQf">
-                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="632"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ee9-5y-G9J">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="429.33333333333331"/>
@@ -182,7 +187,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhE-89-8Uw">
                                                                 <rect key="frame" x="0.0" y="30" width="301" height="18.333333333333329"/>
                                                                 <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="15"/>
-                                                                <color key="textColor" systemColor="placeholderTextColor"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -221,7 +226,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="zGB-Hy-mNG"/>
                             </scrollView>
                             <tabBar contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="qsR-bN-xjc">
-                                <rect key="frame" x="0.0" y="769" width="393" height="49"/>
+                                <rect key="frame" x="0.0" y="735" width="393" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem title="Comics" image="book.closed" catalog="system" id="NJQ-Nh-d8C"/>
@@ -298,8 +303,8 @@
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
-        <systemColor name="placeholderTextColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

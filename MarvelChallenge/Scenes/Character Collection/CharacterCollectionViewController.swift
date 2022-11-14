@@ -15,6 +15,8 @@ class CharacterCollectionViewController: UICollectionViewController {
     private let viewModel: CharacterCollectionViewModel
     private var cancellables = Set<AnyCancellable>()
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     init?(coder: NSCoder, viewModel: CharacterCollectionViewModel) {
         self.viewModel = viewModel
         super.init(coder: coder)
@@ -50,6 +52,17 @@ class CharacterCollectionViewController: UICollectionViewController {
                 
             }.store(in: &cancellables)
         
+        self.viewModel.$isLoading
+            .receive(on: RunLoop.main)
+            .sink {[weak self] isLoading in
+            
+                if isLoading && self?.viewModel.characterCount == 0 {
+                    self?.activityIndicator.startAnimating()
+                } else {
+                    self?.activityIndicator.stopAnimating()
+                }
+                
+        }.store(in: &cancellables)
     }
     
     
@@ -147,6 +160,18 @@ class CharacterCollectionViewController: UICollectionViewController {
         }
          
         
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionFooter:
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LoadingIndicatorCollectionReusableView", for: indexPath)
+                    
+                
+            return footerView
+        default:
+            assert(false, "Unexpected collectionview element")
+        }
     }
     
     //MARK: - NAVIGATION

@@ -55,12 +55,12 @@ final class CharacterCollectionViewModelTest: XCTestCase {
         
         let initialFetchExpectation = XCTestExpectation(description: "FirstFetchPage")
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             XCTAssertEqual(self.viewModel.characterCount, self.pageSize)
             initialFetchExpectation.fulfill()
         }
         
-        wait(for: [initialFetchExpectation], timeout: 4)
+        wait(for: [initialFetchExpectation], timeout: 5)
     
         let character = try XCTUnwrap(viewModel.getCharacter(index: 5))
         

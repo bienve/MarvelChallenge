@@ -50,10 +50,8 @@ final class MarvelChallengeUITests: XCTestCase {
         
         app.navigationBars["MarvelChallenge.CharacterDetailView"].buttons["Marvel Characters"].tap()
         
-        let aBombHasStaticText = XCUIApplication().collectionViews/*@START_MENU_TOKEN@*/.staticTexts["A-Bomb (HAS)"]/*[[".cells.staticTexts[\"A-Bomb (HAS)\"]",".staticTexts[\"A-Bomb (HAS)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
-        
-        XCTAssertTrue(aBombHasStaticText.exists)
-        
+        let firstNavBar = app.navigationBars["Marvel Characters"].staticTexts["Marvel Characters"]
+        XCTAssertTrue(firstNavBar.exists)
     
     }
     

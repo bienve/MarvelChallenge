@@ -28,8 +28,8 @@ class CharacterCollectionViewCell: UICollectionViewCell {
 
     func setup(with character: Character, offset: CGFloat) {
         
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.darkGray.cgColor
+        self.layer.borderWidth = 3
+        self.layer.borderColor = UIColor(named: "layoutBorderColor")?.cgColor
         
         thumbImageView.clipsToBounds = false
         

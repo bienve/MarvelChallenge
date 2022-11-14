@@ -38,7 +38,7 @@ class CharacterDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.imageView.layer.borderColor = UIColor.black.cgColor
+        self.imageView.layer.borderColor = UIColor(named: "layoutBorderColor")?.cgColor
         self.imageView.layer.borderWidth = 3
         self.descriptionBackView.layer.borderColor = UIColor.black.cgColor
         self.descriptionBackView.layer.borderWidth = 1
@@ -67,6 +67,7 @@ class CharacterDetailViewController: UIViewController {
                 self?.backgroundImage.kf
                     .setImage(
                         with: url,
+                        placeholder: UIImage(named: "placeholder"),
                         options: [.transition(ImageTransition.fade(0.5))])
                 
         }.store(in: &cancellables)

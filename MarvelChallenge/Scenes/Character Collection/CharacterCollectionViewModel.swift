@@ -16,7 +16,7 @@ class CharacterCollectionViewModel {
     @Published private(set) var characterCount: Int = 0
     private(set) var copyrigyt: String?
     
-    private static let defaultPageSize = 30
+    private static let defaultPageSize = 40
     private let pageSize: Int
     
     private var currentPage: Int = 0
