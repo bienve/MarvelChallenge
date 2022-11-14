@@ -296,6 +296,7 @@
 		30F47C7A2919A38C00ADD0EA = {
 			isa = PBXGroup;
 			children = (
+				30375E99291C05C300C53B82 /* Readme.md */,
 				30F47C852919A38C00ADD0EA /* MarvelChallenge */,
 				30F47C9C2919A38E00ADD0EA /* MarvelChallengeTests */,
 				30F47CA62919A38E00ADD0EA /* MarvelChallengeUITests */,
@@ -325,7 +326,6 @@
 				30F47CB62919A6B100ADD0EA /* Storyboards */,
 				30BDD1BC2919A9A3005F067C /* Resources */,
 				30157992291BFFF800F8238E /* Config */,
-				30375E99291C05C300C53B82 /* Readme.md */,
 			);
 			path = MarvelChallenge;
 			sourceTree = "<group>";
