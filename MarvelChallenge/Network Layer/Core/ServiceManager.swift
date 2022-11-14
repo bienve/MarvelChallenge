@@ -46,8 +46,4 @@ class ServiceManager {
         
     }
     
-    public func setAuthenticator(authenticator: ServiceAuthenticator) {
-        self.authenticator = authenticator
-    }
-    
 }

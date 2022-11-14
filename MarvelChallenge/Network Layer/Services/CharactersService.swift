@@ -7,10 +7,6 @@
 
 import Foundation
 
-protocol CharacterServiceProtocol {
-    func fetchCharactersList(offset: Int, limit: Int) async throws -> MarvelResponse<CharacterDataContainer>
-}
-
 struct CharactersService: CharacterServiceProtocol {
     
     var serviceManager: ServiceManager

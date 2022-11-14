@@ -39,6 +39,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
 
             thumbImageView.kf.setImage(
                 with: thumbUrl,
+                placeholder: UIImage(named: "placeholder"),
                 options: [
                     .transition(ImageTransition.fade(0.5))]) {[weak self] result in
                     

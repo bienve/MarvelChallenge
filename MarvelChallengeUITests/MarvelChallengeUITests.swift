@@ -22,13 +22,41 @@ final class MarvelChallengeUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testFirstCharacterSelection() throws {
+        
         let app = XCUIApplication()
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        app.collectionViews.cells.otherElements.containing(.staticText, identifier:"3-D Man").children(matching: .other).element.children(matching: .other).element(boundBy: 2).tap()
+        
+        let scrollViewsQuery = app.scrollViews
+        let element = scrollViewsQuery.otherElements.containing(.staticText, identifier:"3-D Man").element
+        
+        XCTAssertTrue(element.exists)
+        
+        let tabBar = app.tabBars["Tab Bar"]
+        
+        XCTAssertTrue(tabBar.exists)
+        
+        tabBar.buttons["Comics"].tap()
+        
+        let alert = app.alerts["Not implemented"]
+        let okButton = alert.scrollViews.otherElements.buttons["Ok"]
+        
+        XCTAssertTrue(alert.exists)
+        XCTAssertTrue(okButton.exists)
+        
+        okButton.tap()
+        
+        app.navigationBars["MarvelChallenge.CharacterDetailView"].buttons["Marvel Characters"].tap()
+        
+        let aBombHasStaticText = XCUIApplication().collectionViews/*@START_MENU_TOKEN@*/.staticTexts["A-Bomb (HAS)"]/*[[".cells.staticTexts[\"A-Bomb (HAS)\"]",".staticTexts[\"A-Bomb (HAS)\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
+        
+        XCTAssertTrue(aBombHasStaticText.exists)
+        
+    
     }
+    
 
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {

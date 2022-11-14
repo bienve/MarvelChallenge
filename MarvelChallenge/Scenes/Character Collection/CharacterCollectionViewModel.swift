@@ -16,7 +16,9 @@ class CharacterCollectionViewModel {
     @Published private(set) var characterCount: Int = 0
     private(set) var copyrigyt: String?
     
-    private let pageSize = 30
+    private static let defaultPageSize = 30
+    private let pageSize: Int
+    
     private var currentPage: Int = 0
     private var pagingReachedEnd: Bool = false
     private var characterList: [Character] = []
@@ -47,7 +49,8 @@ class CharacterCollectionViewModel {
     
     //MARK: - INITIALIZERS
     
-    init(charactersService: CharacterServiceProtocol) {
+    init(charactersService: CharacterServiceProtocol, pageSize: Int = defaultPageSize) {
+        self.pageSize = pageSize
         self.charactersService = charactersService
         self.fetchCharacterList()
     }
@@ -98,7 +101,7 @@ class CharacterCollectionViewModel {
     
     func getCharacter(index: Int) -> Character? {
         
-        guard index >= 0 && index < characterList.count else {
+        guard index >= 0 && index < self.characterCount else {
             return nil
         }
         
