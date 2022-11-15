@@ -8,6 +8,9 @@
 import Foundation
 import CryptoKit
 
+/*
+ * Provides authentication for the marvel api
+ */
 class MarvelAuthenticator: ServiceAuthenticator {
     
     private let publicKey: String
