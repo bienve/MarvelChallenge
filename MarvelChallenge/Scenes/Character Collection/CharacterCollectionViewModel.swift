@@ -99,6 +99,9 @@ class CharacterCollectionViewModel {
         self.pagingReachedEnd = characters.count < pageSize
     }
     
+    /*
+     * Get character by index, fetchs a new page if index reach the mid page position
+     */
     func getCharacter(index: Int) -> Character? {
         
         guard index >= 0 && index < self.characterCount else {
