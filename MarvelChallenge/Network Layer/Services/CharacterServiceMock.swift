@@ -7,6 +7,10 @@
 
 import Foundation
 
+/*
+ * Mocked CharacterService for testing
+ */
+
 struct CharactersServiceMock: CharacterServiceProtocol {
     
     func fetchCharactersList(offset: Int, limit: Int) async throws -> MarvelResponse<CharacterDataContainer> {

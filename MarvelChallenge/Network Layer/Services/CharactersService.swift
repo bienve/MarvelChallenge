@@ -7,6 +7,9 @@
 
 import Foundation
 
+/*
+ * Character api service
+ */
 struct CharactersService: CharacterServiceProtocol {
     
     var serviceManager: ServiceManager

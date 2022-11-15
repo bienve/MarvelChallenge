@@ -7,6 +7,9 @@
 
 import Foundation
 
+/*
+ * Retrieves environment params from current configuration
+ */
 public enum Environment {
     
     // MARK: - Keys

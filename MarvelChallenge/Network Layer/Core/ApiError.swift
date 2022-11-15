@@ -7,6 +7,9 @@
 
 import Foundation
 
+/*
+ * Basic Api error cases
+ */
 enum ApiError: Error {
     case serverError(Int)
     case badResponse

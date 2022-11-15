@@ -7,6 +7,10 @@
 
 import Foundation
 
+
+/*
+ * Singleltol that provides dependency objects
+ */
 class DependencyManager {
     
     private lazy var marvelAuthenticator = MarvelAuthenticator(publicKey: Environment.marvelPublicApiKey,
@@ -25,6 +29,9 @@ class DependencyManager {
     
 }
 
+/*
+ * Provides viewmodel depedency objects
+ */
 extension DependencyManager: ViewModelFactory {
     
     func provideCharacterCollectionViewModel() -> CharacterCollectionViewModel {
@@ -37,6 +44,9 @@ extension DependencyManager: ViewModelFactory {
     
 }
 
+/*
+ * Provides ViewControllers dependecy objects
+ */
 extension DependencyManager: ViewControllerFactory {
     
     func provideCharacterCollectionViewController(coder: NSCoder) -> CharacterCollectionViewController? {

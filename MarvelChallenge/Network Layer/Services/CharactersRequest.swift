@@ -7,6 +7,9 @@
 
 import Foundation
 
+/*
+ * Configure URLRequest for character services.
+ */
 enum CharactersRequest: RequestRouter {
     
     private enum ParamKey: String {

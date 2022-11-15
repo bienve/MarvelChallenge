@@ -7,6 +7,9 @@
 
 import Foundation
 
+/*
+ * Collection of api endpoints
+ */
 enum Endpoint {
     
     static let characterList = "/v1/public/characters"
